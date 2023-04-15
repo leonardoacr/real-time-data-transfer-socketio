@@ -28,7 +28,6 @@ The template is built using Nest, Socket.IO, React, and Next, and can save you s
 - A React front-end to display the real-time graph.
 - Next.js framework to serve the React app and handle routing.
 <br>
-<br>
 <div id="recommendations">
   <h2>:bulb: Recommendations</h2>
 </div>
@@ -46,7 +45,7 @@ By enabling this feature, you can create a more interactive and dynamic experien
 <br>
 <br>
 To enable data transfer from the front-end to the server, you can modify the Socket.IO client and the Nest.js server to handle incoming data. With these modifications, you can seamlessly integrate data transfer in both directions and create a more comprehensive and robust data visualization system.
-
+<br>
 <div id="usage">
   <h2>:hammer_and_wrench: Usage</h2>
 </div>
@@ -61,13 +60,13 @@ To send data to the server, you can use the provided Socket.IO client. Simply in
 <br>
 <br>
 The React front-end is customizable and can be modified to suit your specific needs. The real-time graph can be easily customized using a variety of popular charting libraries. It is being served on localhost:3000 with Next framework.
-
+<br>
 <div id="contributing">
   <h2>:raised_hands: Contributing</h2>
 </div>
 
 If you would like to contribute to this template, please feel free to submit a pull request or open an issue to improve this template. 
-
+<br>
 <div id="technologies">
   <h2>:rocket: Technologies</h2>
 </div>
@@ -80,7 +79,7 @@ If you would like to contribute to this template, please feel free to submit a p
 
 ✔️ TypeScript | ✔️ ReactJS | ✔️ NextJS | ✔️ TailwindCSS | ✔️ Chart.js
 
-
+<br>
 <div id="running_backend">
   <h2>⚙ Running [Backend]</h2>
 </div>
@@ -102,6 +101,7 @@ $ npm install
 $ npm run start:dev
 ```
 
+<br>
 <div id="running_frontend">
   <h2>⚙ Running [Frontend]</h2>
 </div>
