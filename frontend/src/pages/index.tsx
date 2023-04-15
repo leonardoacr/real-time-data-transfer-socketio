@@ -1,12 +1,28 @@
-import Data from "@/components/Data";
 import { ArrowUpDown, Radio } from "lucide-react";
 import { useEffect, useState } from "react";
+import io from "socket.io-client";
 
 export default function Home() {
   const [connectivity, setConnectivity] = useState<string>("");
+  const [data, setData] = useState<number>(10);
 
   useEffect(() => {
-    setConnectivity("STABLE");
+    const socket = io("http://localhost:8000");
+
+    socket.on("connect", () => {
+      console.log("Socket.IO connected");
+      setConnectivity("STABLE");
+    });
+
+    socket.on("randomData", (data: any) => {
+      const randomNumber = parseInt(data.randomNumber);
+      console.log(`${randomNumber}`);
+      setData(randomNumber);
+    });
+
+    return () => {
+      socket.close();
+    };
   }, []);
 
   return (
@@ -25,9 +41,7 @@ export default function Home() {
             <h1 className="text-center text-5xl">DATA</h1>
             <ArrowUpDown className="pl-2 text-sky-500" width={50} height={50} />
           </div>
-          <h2 className="text-center text-2xl text-purple-600">
-            <Data />
-          </h2>
+          <h2 className="text-center text-2xl text-purple-600">{data}</h2>
         </div>
       </div>
     </div>

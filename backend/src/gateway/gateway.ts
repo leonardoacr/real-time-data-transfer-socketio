@@ -2,7 +2,7 @@ import { OnModuleInit } from "@nestjs/common";
 import { WebSocketGateway, WebSocketServer, SubscribeMessage, MessageBody } from "@nestjs/websockets";
 import { Server } from "socket.io";
 
-@WebSocketGateway()
+@WebSocketGateway({ cors: [] })
 export class MyGateway implements OnModuleInit {
     @WebSocketServer() server: Server;
     onModuleInit() {
@@ -10,6 +10,10 @@ export class MyGateway implements OnModuleInit {
             console.log(socket.id);
             console.log('Connected');
         })
+        setInterval(() => {
+            const randomNumber = Math.floor(Math.random() * 100);
+            this.server.emit('randomData', { randomNumber });
+        }, 1000);
     }
 
     @SubscribeMessage('newMessage')
