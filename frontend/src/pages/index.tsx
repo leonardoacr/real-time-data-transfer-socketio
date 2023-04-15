@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import io from "socket.io-client";
 
 export default function Home() {
-  const [connectivity, setConnectivity] = useState<string>("NOT CONNECTED");
+  const [connectivity, setConnectivity] = useState<string>("DISCONNECTED");
   const [data, setData] = useState<number>(10);
   const [acc, setAcc] = useState<number>(0);
   const [graphData, setGraphData] = useState<IGraphData>({
@@ -43,7 +43,7 @@ export default function Home() {
     <div className="flex justify-center items-center ">
       <div className="grid grid-cols-1 w-screen">
         <h1 className="text-center lg:text-7xl sm:text-lg text-zinc-100 py-10">
-          WEBSOCKET
+          Socket.IO
         </h1>
         <div className="flex justify-center">
           <div className="rounded border border-slate-600 p-10 shadow-lg shadow-purple-900">
