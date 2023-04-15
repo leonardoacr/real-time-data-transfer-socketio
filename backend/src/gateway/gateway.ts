@@ -16,15 +16,15 @@ export class MyGateway implements OnModuleInit {
         }, 1000);
     }
 
-    @SubscribeMessage('newMessage')
-    onNewMessage(@MessageBody() body: any) {
-        // Log the message to the console
-        console.log(`Received message from client: ${body}`);
+    // @SubscribeMessage('newMessage')
+    // onNewMessage(@MessageBody() body: any) {
+    //     // Log the message to the console
+    //     console.log(`Received message from client: ${body}`);
 
-        // Send a response message back to the client
-        this.server.emit('onMessage', {
-            msg: 'New Message',
-            content: body
-        });
-    }
+    //     // Send a response message back to the client
+    //     this.server.emit('onMessage', {
+    //         msg: 'New Message',
+    //         content: body
+    //     });
+    // }
 }
