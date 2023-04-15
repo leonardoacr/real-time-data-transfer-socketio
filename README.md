@@ -39,17 +39,27 @@ Technically, it is possible to establish a connection and transfer real-time dat
 To optimize performance and ensure reliable data storage, I recommend using a database with Nest.js. This allows you to refresh the frontend without losing any data, while also being able to clean the graph and start over as needed. Additionally, the database connection enables you to download past data easily and efficiently.
 <br>
 <br>
+Also, to further enhance the functionality of your real-time data transfer and visualization application, you may consider allowing the front-end to send data to the server as well, and this can be easily achieved by uncommenting a few lines of code and modifying the appropriate components.
+<br>
+<br>
+By enabling this feature, you can create a more interactive and dynamic experience for your users. For example, you could allow users to input data directly through the website, which could then be processed and visualized in real-time.
+<br>
+<br>
+To enable data transfer from the front-end to the server, you can modify the Socket.IO client and the Nest.js server to handle incoming data. With these modifications, you can seamlessly integrate data transfer in both directions and create a more comprehensive and robust data visualization system.
 
 <div id="usage">
   <h2>:hammer_and_wrench: Usage</h2>
 </div>
 
 To use this template, simply clone this repository and run npm install to install the required dependencies.
-
+<br>
+<br>
 You can then start the server by running npm run start:dev in the root directory. This will start the Nest server and serve the React app on localhost:8000.
-
+<br>
+<br>
 To send data to the server, you can use the provided Socket.IO client. Simply include it in your project and use the emit method to send data to the server.
-
+<br>
+<br>
 The React front-end is customizable and can be modified to suit your specific needs. The real-time graph can be easily customized using a variety of popular charting libraries. It is being served on localhost:3000 with Next framework.
 
 <div id="contributing">
